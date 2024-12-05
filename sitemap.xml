@@ -2,22 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.laminas.dev/laminas-memory/</loc>
-         <lastmod>2023-12-05</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-12-05</lastmod>
     </url>
     <url>
          <loc>https://docs.laminas.dev/laminas-memory/intro/</loc>
-         <lastmod>2023-12-05</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-12-05</lastmod>
     </url>
     <url>
          <loc>https://docs.laminas.dev/laminas-memory/memory-manager/</loc>
-         <lastmod>2023-12-05</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-12-05</lastmod>
     </url>
     <url>
          <loc>https://docs.laminas.dev/laminas-memory/memory-objects/</loc>
-         <lastmod>2023-12-05</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-12-05</lastmod>
     </url>
 </urlset>
