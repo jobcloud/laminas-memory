@@ -18,7 +18,7 @@ use function uniqid;
 /**
  * Memory manager
  *
- * This class encapsulates memory menagement operations, when PHP works
+ * This class encapsulates memory management operations, when PHP works
  * in limited memory mode.
  */
 class MemoryManager
