@@ -1,10 +1,6 @@
 <?php
 
-/**
- * @see       https://github.com/laminas/laminas-memory for the canonical source repository
- * @copyright https://github.com/laminas/laminas-memory/blob/master/COPYRIGHT.md
- * @license   https://github.com/laminas/laminas-memory/blob/master/LICENSE.md New BSD License
- */
+declare(strict_types=1);
 
 namespace Laminas\Memory\Container;
 
@@ -64,7 +60,7 @@ class Locked extends AbstractContainer
      * _Must_ be used for value access before PHP v 5.2
      * or _may_ be used for performance considerations
      *
-     * @return &string
+     * @return string
      */
     public function &getRef()
     {

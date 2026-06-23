@@ -1,15 +1,14 @@
 <?php
 
-/**
- * @see       https://github.com/laminas/laminas-memory for the canonical source repository
- * @copyright https://github.com/laminas/laminas-memory/blob/master/COPYRIGHT.md
- * @license   https://github.com/laminas/laminas-memory/blob/master/LICENSE.md New BSD License
- */
+declare(strict_types=1);
 
 namespace Laminas\Memory;
 
 use ArrayAccess;
 use Countable;
+use ReturnTypeWillChange;
+
+use function strlen;
 
 /**
  * String value object
@@ -29,7 +28,7 @@ class Value implements ArrayAccess, Countable
     /**
      * Container
      *
-     * @var Container\Movable
+     * @var Movable
      */
     private $container;
 
@@ -40,12 +39,10 @@ class Value implements ArrayAccess, Countable
      */
     private $trace;
 
-
     /**
      * Object constructor
      *
      * @param string $value
-     * @param \Laminas\Memory\Container\Movable $container
      */
     public function __construct($value, Container\Movable $container)
     {
@@ -69,6 +66,7 @@ class Value implements ArrayAccess, Countable
      *
      * @return int
      */
+    #[ReturnTypeWillChange]
     public function count()
     {
         return strlen($this->value);
@@ -81,6 +79,7 @@ class Value implements ArrayAccess, Countable
      * @param int $offset
      * @return bool
      */
+    #[ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return $offset >= 0 && $offset < strlen($this->value);
@@ -93,6 +92,7 @@ class Value implements ArrayAccess, Countable
      * @param int $offset
      * @return string
      */
+    #[ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->value[$offset];
@@ -105,6 +105,7 @@ class Value implements ArrayAccess, Countable
      * @param int $offset
      * @param string $char
      */
+    #[ReturnTypeWillChange]
     public function offsetSet($offset, $char)
     {
         $this->value[$offset] = $char;
@@ -121,6 +122,7 @@ class Value implements ArrayAccess, Countable
      *
      * @param int $offset
      */
+    #[ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->value[$offset]);
@@ -148,6 +150,7 @@ class Value implements ArrayAccess, Countable
      * or _may_ be used for performance considerations
      *
      * @internal
+     *
      * @return string
      */
     public function &getRef()

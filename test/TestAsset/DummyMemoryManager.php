@@ -1,10 +1,6 @@
 <?php
 
-/**
- * @see       https://github.com/laminas/laminas-memory for the canonical source repository
- * @copyright https://github.com/laminas/laminas-memory/blob/master/COPYRIGHT.md
- * @license   https://github.com/laminas/laminas-memory/blob/master/LICENSE.md New BSD License
- */
+declare(strict_types=1);
 
 namespace LaminasTest\Memory\TestAsset;
 
@@ -16,19 +12,13 @@ use Laminas\Memory\MemoryManager;
  */
 class DummyMemoryManager extends MemoryManager
 {
-    /**
-     * @var bool
-     */
+    /** @var bool */
     public $processUpdatePassed = false;
 
-    /**
-     * @var integer
-     */
+    /** @var integer */
     public $processedId;
 
-    /**
-     * @var Container\Movable
-     */
+    /** @var Container\Movable */
     public $processedObject;
 
     /**
@@ -42,7 +32,6 @@ class DummyMemoryManager extends MemoryManager
     /**
      * DummyMemoryManager value update callback method
      *
-     * @param Container\Movable $container
      * @param int|string $id
      */
     public function processUpdate(Container\Movable $container, $id)

@@ -1,14 +1,11 @@
 <?php
 
-/**
- * @see       https://github.com/laminas/laminas-memory for the canonical source repository
- * @copyright https://github.com/laminas/laminas-memory/blob/master/COPYRIGHT.md
- * @license   https://github.com/laminas/laminas-memory/blob/master/LICENSE.md New BSD License
- */
+declare(strict_types=1);
 
 namespace LaminasTest\Memory;
 
 use Laminas\Memory\Container;
+use Laminas\Memory\Container\Locked;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -23,7 +20,7 @@ class LockedTest extends TestCase
     {
         $memObject = new Container\Locked('0123456789');
 
-        $this->assertInstanceOf('Laminas\Memory\Container\Locked', $memObject);
+        $this->assertInstanceOf(Locked::class, $memObject);
     }
 
     /**
@@ -36,7 +33,7 @@ class LockedTest extends TestCase
         // getRef() method
         $this->assertEquals($memObject->getRef(), '0123456789');
 
-        $valueRef = &$memObject->getRef();
+        $valueRef    = &$memObject->getRef();
         $valueRef[3] = '_';
         $this->assertEquals($memObject->getRef(), '012_456789');
 
@@ -73,6 +70,8 @@ class LockedTest extends TestCase
      */
     public function testTouch()
     {
+        self::expectNotToPerformAssertions();
+
         $memObject = new Container\Locked('0123456789');
 
         $memObject->touch();
